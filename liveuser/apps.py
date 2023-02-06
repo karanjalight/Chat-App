@@ -1,6 +1,8 @@
 from django.apps import AppConfig
 
 
-class LiveuserConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
+class ExampleConfig(AppConfig):
     name = 'liveuser'
+
+    def ready(self):
+        import liveuser.signals
